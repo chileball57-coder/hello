@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Humans VS Zombie</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#1a1a1a;
+    color:white;
+    text-align:center;
+}
+
+header{
+    background:#0f0f0f;
+    padding:20px;
+    border-bottom:3px solid #00ff00;
+}
+
+h1{
+    color:#00ff00;
+}
+
+.contenedor{
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
+
+.anuncios{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin:20px 0;
+}
+
+.anuncio{
+    width:250px;
+    height:150px;
+    background:#333;
+    border:2px solid gold;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.boton{
+    background:#00aa00;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    font-size:20px;
+    cursor:pointer;
+    border-radius:8px;
+}
+
+.boton:hover{
+    transform:scale(1.05);
+}
+
+.link{
+    margin-top:20px;
+}
+
+.link a{
+    color:#00ff00;
+    text-decoration:none;
+    font-size:18px;
+}
+
+footer{
+    margin-top:30px;
+    padding:20px;
+    background:#111;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>🧟 Humans VS Zombie 🧟</h1>
+    <p>¡Sobrevive a las hordas de zombis!</p>
+</header>
+
+<div class="contenedor">
+
+<div class="anuncios">
+    <div class="anuncio">ANUNCIO #1</div>
+    <div class="anuncio">ANUNCIO #2</div>
+    <div class="anuncio">ANUNCIO #3</div>
+</div>
+
+<h2>Bienvenido</h2>
+
+<p>
+    Explora mi proyecto y prepárate para sobrevivir.
+</p>
+
+<button class="boton" onclick="jugar()">
+    🎮 JUGAR
+</button>
+
+<div class="link">
+    <p>
+        <a href="https://www.roblox.com/es/games/87056054089707/Humans-VS-Zombie-laxers" target="_blank">
+            🔗 Abrir juego de Roblox
+        </a>
+    </p>
+</div>
+
+<h3 id="visitas">Visitas: 0</h3>
+
+</div>
+
+<footer>
+    © 2026 Humans VS Zombie
+</footer>
+
+<script>
+function jugar(){
+    window.open(
+        "https://www.roblox.com/es/games/87056054089707/Humans-VS-Zombie-laxers",
+        "_blank"
+    );
+}
+
+let visitas = localStorage.getItem("visitas");
+
+if(visitas === null){
+    visitas = 0;
+}
+
+visitas = Number(visitas) + 1;
+
+localStorage.setItem("visitas", visitas);
+
+document.getElementById("visitas").innerText =
+"Visitas: " + visitas;
+</script>
+
+</body>
+</html>
